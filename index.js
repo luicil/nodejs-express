@@ -7,6 +7,10 @@ app.get("/", function(req, res){
     res.send("<h1>Acessou</h1>")
 });
 
+app.get("/blog", function(req, res){
+    res.send("Blogou !");
+});
+
 
 app.listen(port, function(erro){
     if(erro){
