@@ -11,6 +11,15 @@ app.get("/blog", function(req, res){
     res.send("Blogou !");
 });
 
+app.get("/ola/:nome/:sobrenome?",function(req, res){
+    let txt = req.params.nome;
+    if(req.params.sobrenome){
+        txt += " " + req.params.sobrenome
+    }
+
+    res.send("Olá: " + txt)
+});
+
 
 app.listen(port, function(erro){
     if(erro){
