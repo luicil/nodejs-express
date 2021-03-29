@@ -13,10 +13,13 @@ app.get("/blog", function(req, res){
 
 app.get("/ola/:nome/:sobrenome?",function(req, res){
     let txt = req.params.nome;
+    const fulano = req.query["fulano"]
     if(req.params.sobrenome){
         txt += " " + req.params.sobrenome
     }
-
+    if(fulano){
+        txt += " fulano: " + fulano
+    }
     res.send("Olá: " + txt)
 });
 
